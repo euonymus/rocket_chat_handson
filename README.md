@@ -58,4 +58,67 @@ $ kubectl describe pod
 $ kubectl delete pod hello-world
 ```
 
+## Step5: Pod Practice
+
+```bash
+$ kubectl apply -f practices/pod.yml
+$ kubectl delete -f practices/pod.yml
+```
+
+
+## Step6: Apply resources
+
+```bash
+$ kubectl apply -f k8s/deployment.yml
+$ kubectl get deploy
+$ kubectl describe deploy NAME
+$ kubectl delete -f k8s/deployment.yml
+
+$ kubectl apply -f k8s/service.yml
+$ kubectl get service
+$ kubectl describe service
+$ kubectl get po -l app=web
+
+$ kubectl delete -f k8s/service.yml
+```
+
+## Step7: 動作確認
+
+busyboxを使って、対話型の Pod を起動
+
+```bash
+$ kubectl run test -it --restart=Never --image=busybox sh
+```
+
+```bash
+/ # wget -O - http://web-service
+```
+
+## Step8: ボリューム
+
+```bash
+$ kubectl apply -f k8s/pv.yml
+$ kubectl apply -f k8s/pvc.yml
+```
+
+## Step9: MongoDB
+
+```bash
+$ kubectl apply -f k8s/mongodb.yml
+$ kubectl get pod -o wide
+$ kubectl get logs POD-NAME
+$ kubectl get events
+```
+
+```bash
+$ kubectl apply -f k8s/svc-mongodb.yml
+```
+
+## Step10: Rocket.Chat
+
+```bash
+$ kubectl apply -f k8s/deploy-rocket.yml
+$ kubectl apply -f k8s/svc-rocket.yml
+```
+
 
