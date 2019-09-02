@@ -116,6 +116,8 @@ $ kubectl apply -f k8s/svc-mongodb.yml
 
 ## Step10: Rocket.Chat
 
+[Rocket.Chat](https://hub.docker.com/_/rocket-chat)
+
 ```bash
 $ kubectl apply -f k8s/deploy-rocket.yml
 $ kubectl apply -f k8s/svc-rocket.yml
