@@ -15,6 +15,10 @@ spec:
       containers:
       - name: rocket
         image: rocket.chat
+        ports:
+          - name: http
+            containerPort: 31000
+            protocol: TCP
         env:
         - name: ROOT_URL
-          value: http://localhost:31000/
+          value: http://localhost:3000/
